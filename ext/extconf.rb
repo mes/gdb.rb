@@ -70,7 +70,7 @@ Dir.chdir('src') do
   end
 
   Dir.chdir(dir) do
-    sys("./configure --prefix=#{CWD}/dst/ --with-python=#{with_config('python-dir') || 'yes'}")
+    sys("./configure --prefix=#{CWD}/dst/ --with-python=#{with_config('python-dir') || 'yes'} --disable-werror")
     sys("make")
     sys("make install")
   end
